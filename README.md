@@ -8,7 +8,7 @@ Convert a color image into CMYK-separated halftone SVG files — one per channel
 
 Built for screen printing, risograph, and any print workflow where you need clean per-channel separations as scalable vector art.
 
-**[palettary.com/halftone](https://palettary.com/halftone)**
+A web-based version of this tool for monochrome halftones can be found at **[palettary.com/halftone](https://palettary.com/halftone)**.
 
 ---
 
