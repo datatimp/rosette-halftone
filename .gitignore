@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+
+# Build / distribution
+build/
+dist/
+wheels/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Tool output
+output/
+*.zip
+
+# Test images and local experiments
+/images
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

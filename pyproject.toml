@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rosette-halftone"
+version = "1.0.1"
+description = "Convert color images to CMYK-separated halftone SVG files for screen printing and risograph"
+readme = "README.md"
+license = { text = "AGPL-3.0-or-later" }
+requires-python = ">=3.10"
+authors = [{ name = "datatimp" }]
+keywords = ["halftone", "cmyk", "svg", "screen-printing", "risograph", "color-separation", "print"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Other Audience",
+    "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia :: Graphics :: Graphics Conversion",
+    "Topic :: Printing",
+]
+dependencies = [
+    "Pillow>=10.0",
+    "numpy>=1.24",
+    "click>=8.1",
+]
+
+[project.urls]
+Homepage = "https://palettary.com/halftone"
+Repository = "https://github.com/datatimp/rosette-halftone"
+
+[project.scripts]
+rosette = "rosette.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+rosette = ["profiles/*.icc"]
