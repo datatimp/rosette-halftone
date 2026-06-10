@@ -1,5 +1,5 @@
 
-<img src="assets/images/rosette-logomark-wh.svg" width="600">
+<img src="https://raw.githubusercontent.com/datatimp/rosette-halftone/main/assets/images/rosette-logomark-wh.svg" width="600" alt="Rosette">
 
 ---
 
