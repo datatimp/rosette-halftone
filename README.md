@@ -1,4 +1,8 @@
-# Rosette
+
+<img src="assets/images/rosette-logomark-wh.svg" width="600">
+
+---
+
 
 [![PyPI](https://img.shields.io/pypi/v/rosette-halftone)](https://pypi.org/project/rosette-halftone/)
 [![Python](https://img.shields.io/pypi/pyversions/rosette-halftone)](https://pypi.org/project/rosette-halftone/)
