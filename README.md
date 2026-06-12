@@ -14,7 +14,8 @@ Built for screen printing, risograph, and any print workflow where you need clea
 
 A web-based version of this tool for monochrome halftones can be found at **[palettary.com/halftone](https://palettary.com/halftone)**.
 
----
+
+<br>
 
 ## What Rosette Does
 
@@ -32,19 +33,83 @@ Each SVG contains only that channel's dots as `<circle>` elements on a transpare
 
 Unlike raster-output halftone tools, Rosette's plates are resolution-independent — scale them to any print size without quality loss. Isolated per-channel vector plates are the whole point: a composited raster preview can't be burned to a screen or sent to a riso drum, but these SVGs can.
 
----
+
+<br>
 
 ## Installation
 
-Available on PyPI as [rosette-halftone](https://pypi.org/project/rosette-halftone/):
+<div align="center">
+<h3>Choose your Python level</h3>
+
+<a href="#pyPro"><img src="https://raw.githubusercontent.com/datatimp/rosette-halftone/main/assets/images/button_pyPro.svg" height="40" alt="Python Pro">
+</a>&nbsp;&nbsp;&nbsp;
+<a href="#pyNoob"><img src="https://raw.githubusercontent.com/datatimp/rosette-halftone/main/assets/images/button_pyNoob.svg" height="40" alt="Python Beginner"></a>
+</div>
+
+<br />
+
+### <div id="pyPro">Python Pro💪</div>
+
+Rosette is on PyPI as [rosette-halftone](https://pypi.org/project/rosette-halftone/). To install:
 
 ```bash
 pip install rosette-halftone
 ```
 
-The installed command is `rosette`. Requires Python 3.10+. Dependencies: Pillow, NumPy, Click.
+The CLI command is `rosette`. Requires Python 3.10+. All dependencies install automatically.
 
-**Linux note:** modern Debian/Ubuntu block `pip install` outside a virtual environment ("externally-managed-environment"). The easiest fix is [pipx](https://pipx.pypa.io/), which installs CLI tools globally in their own isolated environments:
+<br />
+
+### <div id="pyNoob">Python Beginner🤷</div>
+
+Rosette has no app icon or window — you type commands into a terminal and it writes files. That's less scary than it sounds. Total setup is two steps, about five minutes, and you only do it once.
+
+<details>
+<summary><strong>Windows</strong></summary>
+
+**Step 1 — Install Python.** Download it from [python.org/downloads](https://www.python.org/downloads/) and run the installer. On the first screen, **check the box that says "Add python.exe to PATH"** — this is the one step people miss, and nothing works without it.
+
+**Step 2 — Install Rosette.** Open a terminal: press the Windows key, type `cmd`, press Enter. In the black window, type:
+
+```
+pip install rosette-halftone
+```
+
+**Check it worked:**
+
+```
+rosette --help
+```
+
+If you see a list of options, you're done. If you see "rosette is not recognized," close the terminal, reopen it, and try again (the PATH change needs a fresh window).
+
+</details>
+
+<details>
+<summary><strong>macOS</strong></summary>
+
+**Step 1 — Install Python.** Download it from [python.org/downloads](https://www.python.org/downloads/) and run the installer. (macOS ships with an old Python you shouldn't use — install the real one.)
+
+**Step 2 — Install Rosette.** Open Terminal (press Cmd+Space, type `terminal`, press Enter) and type:
+
+```
+pip3 install rosette-halftone
+```
+
+**Check it worked:**
+
+```
+rosette --help
+```
+
+If you see a list of options, you're done.
+
+</details>
+
+<details>
+<summary><strong>Linux</strong></summary>
+
+Modern Debian/Ubuntu block `pip install` outside a virtual environment ("externally-managed-environment"). Use [pipx](https://pipx.pypa.io/) instead — it gives you the global command without the error:
 
 ```bash
 sudo apt install pipx
@@ -52,7 +117,48 @@ pipx ensurepath
 pipx install rosette-halftone
 ```
 
----
+Open a new terminal, then check with `rosette --help`.
+
+</details>
+
+<br />
+
+### Your first separation
+Now that you have everything installed, let's run an image through Rosette. 
+
+1. Put an image somewhere easy, like your Desktop — say `photo.jpg`.
+2. In the terminal, move to that folder:
+   - Windows: `cd Desktop`
+   - macOS/Linux: `cd ~/Desktop`
+3. Run:
+   ```
+   rosette photo.jpg
+   ```
+4. Look in the new `output` folder on your Desktop: four SVG plates (`cyan`, `magenta`, `yellow`, `black`) and a `sample.png` preview. Open the SVGs in Illustrator, Inkscape, or Figma.
+
+<br />
+
+### Understanding Options
+
+Now let's dig a little deeper. When you run a command-line tool, anything you add after the command name changes how it behaves. Take this example:
+
+```
+rosette --dots 100 image.jpg
+```
+
+Breaking that down:
+
+- `rosette` is the command — the tool you're running.
+- `image.jpg` is the **argument** — the thing Rosette acts on (your image).
+- `--dots` is an **option** — a setting you're adjusting.
+- `100` is the **value** you're giving that option.
+
+Options start with dashes: a single `-` for one-letter shortcuts, and two `--` for full words (like `--dots`). Some options don't take a value at all — they're simply on or off. Those are often called **flags**. Rosette's `--zip` is one: add it and you get a ZIP, leave it off and you don't.
+
+The two options you'll reach for most are `--dots` (how fine the dot grid is) and `--gamma` (how heavy the ink sits) — both explained below.
+
+
+<br />
 
 ## Usage
 

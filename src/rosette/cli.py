@@ -130,7 +130,7 @@ def main(image, dots, preset, angles, min_radius, channels, resample, tac, gamma
         angle = screen_angles[ch]
         color = CHANNEL_COLORS[ch]
         label = CHANNEL_LABELS[ch]
-        click.echo(f"  Generating {label} (angle {angle}°)...")
+        click.echo(f"  Generating {label} (angle {angle} deg)...")
         svg = generate_svg(
             channel_array=channel_arrays[ch],
             image_width=width,
