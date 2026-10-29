@@ -41,14 +41,14 @@ Unlike raster-output halftone tools, Rosette's plates are resolution-independent
 <div align="center">
 <h3>Choose your Python level</h3>
 
-<a href="#pyPro"><img src="https://raw.githubusercontent.com/datatimp/rosette-halftone/main/assets/images/button_pyPro.svg" height="40" alt="Python Pro">
+<a href="#python-pro"><img src="https://raw.githubusercontent.com/datatimp/rosette-halftone/main/assets/images/button_pyPro.svg" height="40" alt="Python Pro">
 </a>&nbsp;&nbsp;&nbsp;
-<a href="#pyNoob"><img src="https://raw.githubusercontent.com/datatimp/rosette-halftone/main/assets/images/button_pyNoob.svg" height="40" alt="Python Beginner"></a>
+<a href="#python-beginner"><img src="https://raw.githubusercontent.com/datatimp/rosette-halftone/main/assets/images/button_pyNoob.svg" height="40" alt="Python Beginner"></a>
 </div>
 
 <br />
 
-### <div id="pyPro">Python Pro💪</div>
+### Python Pro💪
 
 Rosette is on PyPI as [rosette-halftone](https://pypi.org/project/rosette-halftone/). To install:
 
@@ -58,11 +58,11 @@ pip install rosette-halftone
 
 The CLI command is `rosette`. Requires Python 3.10+. All dependencies install automatically.
 
-On modern Debian or Ubuntu, use `pipx install rosette-halftone` instead (see Linux under [Python Beginner](#pyNoob)).
+On modern Debian or Ubuntu, use `pipx install rosette-halftone` instead (see Linux under [Python Beginner](#python-beginner)).
 
 <br />
 
-### <div id="pyNoob">Python Beginner🤷</div>
+### Python Beginner🤷
 
 Rosette has no app icon or window — you type commands into a terminal and it writes files. That's less scary than it sounds. Total setup is two steps, about five minutes, and you only do it once.
 
