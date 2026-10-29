@@ -58,6 +58,8 @@ pip install rosette-halftone
 
 The CLI command is `rosette`. Requires Python 3.10+. All dependencies install automatically.
 
+On modern Debian or Ubuntu, use `pipx install rosette-halftone` instead (see Linux under [Python Beginner](#pyNoob)).
+
 <br />
 
 ### <div id="pyNoob">Python Beginner🤷</div>
