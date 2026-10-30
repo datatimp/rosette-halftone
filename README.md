@@ -27,7 +27,7 @@ Rosette takes a color image and produces four standalone SVG plates plus a compo
 | `magenta.svg` | Magenta channel halftone dots |
 | `yellow.svg` | Yellow channel halftone dots |
 | `black.svg` | Black channel halftone dots |
-| `sample.png` | All channels composited — a quick calibration preview |
+| `sample.png` | All channels composited at your image's size, for a quick preview |
 
 Each SVG contains only that channel's dots as `<circle>` elements on a transparent background. Load them into Inkscape or Illustrator, or send them directly to a print workflow.
 
@@ -230,7 +230,7 @@ Typical ranges by process: **screen printing** 35–65 lpi · **risograph** 50�
 
 ### About sample.png
 
-`sample.png` is a quick composite of all active channels rendered at a fixed scale — `--dots` × 4 pixels wide — so each dot cell is about 4px across and the image reads correctly at 100% zoom regardless of input resolution. Use it to sanity-check dot size, screen angles, and tonal range before opening the SVG plates.
+`sample.png` is a quick composite of all active channels, rendered at the same pixel size as your input image so you can compare the two side by side. Use it to sanity-check dot size, screen angles, and tonal range before opening the SVG plates.
 
 It is a calibration aid, not a print proof: it approximates ink overlap with a simple CMYK→RGB conversion and won't match the color fidelity of a press proof or a dedicated raster halftone tool. Judge final quality from the SVG plates themselves.
 
@@ -293,7 +293,7 @@ For risograph and screen printing, angle choice also affects ink mixing behavior
 4. **Rotated grid** — a dot grid is generated at the channel's screen angle, sized to cover the full image diagonal so no edge is missed at any rotation.
 5. **Sampling** — each dot's ink density is sampled from the blurred channel at the dot centre using the `--resample` kernel (bilinear by default).
 6. **Gamma & radius mapping** — density passes through the `--gamma` curve, then maps to dot radius with area-proportional (square-root) scaling so ink coverage stays linear with density. Maximum radius is `cell_size × 0.47`, keeping adjacent dots from merging in SVG solid-fill rendering.
-7. **Output** — each channel becomes a standalone SVG of `<circle>` elements on a transparent background, plus a fixed-scale `sample.png` composite for calibration.
+7. **Output** — each channel becomes a standalone SVG of `<circle>` elements on a transparent background, plus a `sample.png` composite at the input image's size.
 
 ---
 

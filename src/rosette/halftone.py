@@ -68,7 +68,6 @@ def generate_svg(
 
 
 _PREVIEW_SUPERSAMPLE = 2   # render at 2× then downsample for antialiased soft edges
-_PREVIEW_CELL_PX = 4       # target dot-cell size in the output sample.png (pixels)
 
 
 def render_preview(
@@ -90,19 +89,13 @@ def render_preview(
     converted to RGB via Pillow's subtractive CMYK→RGB formula.
 
     Plates are drawn at _PREVIEW_SUPERSAMPLE× resolution and then
-    downsampled to a fixed output size of dots_per_row × _PREVIEW_CELL_PX
-    pixels wide. This keeps dot cells at a consistent ~4px diameter in the
-    output regardless of input image resolution, so sample.png is always
-    readable at 100% zoom for calibration.
+    downsampled to the input image's own pixel size, so sample.png lines up
+    1:1 with the original for side-by-side comparison.
     """
     ss = _PREVIEW_SUPERSAMPLE
     render_w = image_width * ss
     render_h = image_height * ss
     render_size = (render_w, render_h)
-
-    # Output size: dots_per_row × _PREVIEW_CELL_PX wide, proportional height.
-    out_w = dots_per_row * _PREVIEW_CELL_PX
-    out_h = int(out_w * image_height / image_width)
 
     plates: dict[str, Image.Image] = {}
 
@@ -126,10 +119,8 @@ def render_preview(
 
     cmyk = Image.merge("CMYK", [plates["c"], plates["m"], plates["y"], plates["k"]])
     rgb_large = cmyk.convert("RGB")
-    # Downsample to the calibration size — Lanczos blends oversized dots into
-    # soft-edged circles. The heavy downscale (from 2× input res to dots×4px)
-    # gives strong antialiasing and keeps dots optically readable at 100% zoom.
-    return rgb_large.resize((out_w, out_h), Image.LANCZOS)
+    # Downsample back to the input size; Lanczos softens the dot edges.
+    return rgb_large.resize((image_width, image_height), Image.LANCZOS)
 
 
 # ---------------------------------------------------------------------------
