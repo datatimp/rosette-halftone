@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "rosette-halftone"
-version = "1.0.3"
+version = "1.0.4"
 description = "Convert color images to CMYK-separated halftone SVG files for screen printing and risograph"
 readme = "README.md"
 license = { text = "AGPL-3.0-or-later" }
