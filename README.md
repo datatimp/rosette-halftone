@@ -17,6 +17,17 @@ A web-based version of this tool for monochrome halftones can be found at **[pal
 
 <br>
 
+## Rosette for Affinity
+
+Rosette also runs inside **Affinity** (3.3 or later) as a script. Select any object, run **Rosette Halftone**, and get a black halftone of true vector circles in place, with a live preview of cell size, angle, gamma and minimum dot. No exporting, tracing or re-importing.
+
+Unlike Affinity's built-in Live Halftone, the result is real vector shapes, and a shape's edge never gets a border of heavy dots.
+
+**[Get the script and install steps →](https://github.com/datatimp/rosette-halftone/tree/main/affinity)**
+
+
+<br>
+
 ## What Rosette Does
 
 Rosette takes a color image and produces four standalone SVG plates plus a composite preview:
