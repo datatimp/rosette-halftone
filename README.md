@@ -23,6 +23,10 @@ Rosette also runs inside **Affinity** (3.3 or later) as a script. Select any obj
 
 Unlike Affinity's built-in Live Halftone, the result is real vector shapes, and a shape's edge never gets a border of heavy dots.
 
+<img src="https://raw.githubusercontent.com/datatimp/rosette-halftone/main/assets/images/rosette-script-demo.png" alt="Four steps in Affinity: draw a box, give it a gradient, run Rosette Halftone to get vector dots, then bend the dots with Affinity's warp tools.">
+
+Because every dot is a real shape, Affinity's own vector tools keep working on the result. The warp above was made with Affinity's warp tools, straight from the script's dots.
+
 **[Get the script and install steps →](https://github.com/datatimp/rosette-halftone/tree/main/affinity)**
 
 

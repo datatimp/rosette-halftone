@@ -4,6 +4,11 @@ A script for Affinity 3.3 or later that turns the selected object into a black h
 true vector circles, using Rosette's dot math. It doesn't rasterize the result or trace it: every
 dot is an exact ellipse at the size Rosette calculates.
 
+![Four steps in Affinity: draw a box, give it a gradient, run Rosette Halftone to get vector dots, then bend the dots with Affinity's warp tools.](../assets/images/rosette-script-demo.png)
+
+Because the dots are real shapes, Affinity's vector tools keep working on them: the warp in step 4
+was made with Affinity's warp tools, straight from the script's dots.
+
 Affinity's scripting is in beta, so a future Affinity update may need the script updated too.
 
 ## Install
@@ -16,7 +21,7 @@ Affinity's scripting is in beta, so a future Affinity update may need the script
 
 1. Select one object: a shape, a gradient, a placed image or a group. To halftone several objects
    together, group them first.
-2. Run **Rosette**. The dialog previews the dots live on the canvas:
+2. Run **Rosette Halftone**. The dialog previews the dots live on the canvas:
    - **Cell size:** the distance between dot centres.
    - **Angle:** the screen angle; 45° is the usual angle for black.
    - **Gamma:** above 1 opens up the highlights (smaller dots in light areas); below 1 makes
