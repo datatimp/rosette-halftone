@@ -98,6 +98,12 @@ shape's edge never gets a border of heavy dots, unlike Affinity's Live Halftone 
 - It runs once. To change the settings, undo and run it again.
 - Colors are read as brightness: a color's lightness decides the dot size.
 
+## Other Scripts
+
+Find my other Affinity scripts [here](https://github.com/datatimp/affinity-scripts). Those scripts include:
+- Block Shadow
+- Sticker Outline
+
 ## Tests
 
 The dot math is checked against Rosette's Python, so the two stay in step. From the repo root:
