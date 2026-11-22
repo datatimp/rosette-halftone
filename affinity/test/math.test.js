@@ -2,7 +2,7 @@
 //
 //     node --test affinity/test
 //
-// The math is the block between ROSETTE-MATH-BEGIN and ROSETTE-MATH-END in affinity/rosette.js,
+// The math is the block between ROSETTE-MATH-BEGIN and ROSETTE-MATH-END in affinity/src/rosette.js,
 // loaded on its own so the test needs nothing from Affinity.
 
 'use strict';
@@ -14,7 +14,7 @@ const test = require('node:test');
 const vm = require('node:vm');
 
 function loadMath() {
-    const src = fs.readFileSync(path.join(__dirname, '..', 'rosette.js'), 'utf8');
+    const src = fs.readFileSync(path.join(__dirname, '..', 'src', 'rosette.js'), 'utf8');
     // From the line after the BEGIN marker up to the END marker.
     const after = src.split('// ROSETTE-MATH-BEGIN')[1];
     const block = after.slice(after.indexOf('\n')).split('// ROSETTE-MATH-END')[0];

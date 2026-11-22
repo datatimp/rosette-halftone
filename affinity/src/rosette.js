@@ -1,7 +1,9 @@
 /*
 Rosette for Affinity: turns the selected object into a black halftone of true vector dots.
 
+Version 1.0
 Copyright (C) 2026 datatimp
+https://github.com/datatimp/rosette-halftone/tree/main/affinity
 SPDX-License-Identifier: AGPL-3.0-or-later
 
 Select one object and run the script. A dialog sets the cell size, screen angle, gamma and minimum
