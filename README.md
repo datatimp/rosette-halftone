@@ -27,7 +27,9 @@ Unlike Affinity's built-in Live Halftone, the result is real vector shapes, and 
 
 Because every dot is a real shape, Affinity's own vector tools keep working on the result. The warp above was made with Affinity's warp tools, straight from the script's dots.
 
-**[Get the script and install steps →](https://github.com/datatimp/rosette-halftone/tree/main/affinity)**
+The script lives in the [affinity-scripts](https://github.com/datatimp/affinity-scripts) repo, with other Affinity scripts.
+
+**[Get the script and install steps →](https://github.com/datatimp/affinity-scripts#rosette-halftone)**
 
 
 <br>
